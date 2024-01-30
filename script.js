@@ -1,6 +1,8 @@
 var mydata = []
 var concursante = ""
-function validate(text) {
+function validate() {
+    var guess_input = document.getElementById("guess_input");
+    text = guess_input.value
     text = removeTildesAndLowerCase(text)
     found = false;
     for (c of mydata) {
@@ -121,7 +123,7 @@ window.onload = () => {
     var guess_input = document.getElementById("guess_input");
     guess_input.addEventListener("keydown", function (e) {
         if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
-            validate(guess_input.value);
+            validate();
         }
     });
 };
