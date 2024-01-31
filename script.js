@@ -142,7 +142,7 @@ function showDialog() {
 function shareOnTwitter() {
   // Replace 'your-game-result-url' with the actual URL you want to share
   var shareUrl = 'https://anegda.github.io/OTWordle/';
-  var tweetText = '¡He acertado el #OTWordle en ';
+  var tweetText = '¡He acertado el #OTWordle en ' + intentos.toString() + " intentos!";
 
   // Open Twitter share window
   window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(shareUrl) + '&text=' + encodeURIComponent(tweetText), '_blank');
