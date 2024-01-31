@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTDLE</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <script type="text/javascript" src="dataset.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+  <h1>
+    <img src="./logo.png" alt="Logo" class="logo">
+    OTDLE
+    <img src="./logo.png" alt="Logo" class="logo">
+  </h1>
+
+  <div id="dialog">
+    <p>¡Has ganado!</p>
+    <button id="googleBtn" onclick="random()">Random</button>
+    <button id="twitterBtn" onclick="shareOnTwitter()">Twitter</button>
+  </div>
+  
+  <div class="input-container"">
+    <input type="text" id="guess_input" placeholder="Concursante">
+    <button type="button" onclick="validate()" style="float: right">Comprobar</button> 
+    <button id="reglas" onclick="document.getElementById('aviso').setAttribute('data-on','on')">Reglas</button>
+    <a href="random.html" class="button">Random</a>
+  </div>
+  <br>
+  <table id="guesses">
+    <thead>
+      <th>Concursante</th>
+      <th>Edición</th>
+      <th>Posición</th>
+      <th>Nominaciones</th>
+      <th>Comunidad</th>
+    </thead>
+    <tbody id="tableBody">
+    </tbody>
+  </table>
+  <div  class="panel" id="aviso" data-on="off" onclick="this.setAttribute('data-on','off')">
+    <div>
+      <p>
+        El objetivo es adivinar el concursante escondido.
+        Cada turno puedes introducir el nombre de un concursante de las últimas 4 ediciones de OT.
+        En caso de ser correcto habrás ganado el juego, ¡Enhorabuena!.
+        En caso contrario en la pantalla aparecerán pistas sobre si el jugador introducido coincide en edición, posición en el concurso, número de nominaciones finales y comunidad autónoma.
+        Los colores indican lo siguiente:
+      <ul>
+        <li>Verde: coincide el campo.</li>
+        <li>Rojo: no coincide el campo.</li>
+        <li>Naranja ↑: el número es mayor / mejor</li>
+        <li>Azul ↓: el número es menor / peor</li>
+      </ul>
+      (AVISO: en el caso de la posición naranja, implica que el concursante a advinar ha quedado mejor y azul que ha quedado peor)
+      </p>
+    </div>
+  </div>
+</body>
+</html>
