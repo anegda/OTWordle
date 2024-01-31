@@ -17,6 +17,7 @@ function validate() {
         }
 
         if(found==true){
+            intentos = intentos +1;
             // Get the table body element in which you want to add row
             let table = document.getElementById("tableBody");
            
@@ -44,7 +45,6 @@ function validate() {
                 c1.style.color = "#008000";
                 showDialog();
             }else{
-                intentos = intentos +1;
                 c1.style.color = "#FF0000";
             }
             
@@ -142,7 +142,7 @@ function showDialog() {
 function shareOnTwitter() {
   // Replace 'your-game-result-url' with the actual URL you want to share
   var shareUrl = 'https://anegda.github.io/OTWordle/';
-  var tweetText = '¡He acertado el #OTWordle en ' + intentos.toString() + " intentos!";
+  var tweetText = '¡He acertado el #OTWordle en ' + intentos.toString() + " intentos! #OT2023";
 
   // Open Twitter share window
   window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(shareUrl) + '&text=' + encodeURIComponent(tweetText), '_blank');
