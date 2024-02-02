@@ -140,9 +140,21 @@ function showDialog() {
 }
 
 function shareOnTwitter() {
+  // Get current date
+  var currentDate = new Date();
+
+  // Get day of the month
+  var dayOfMonth = currentDate.getDate();
+
+  // Get first letter of the month
+  var firstLetterOfMonth = currentDate.toLocaleString('default', { month: 'short' }).charAt(0).toUpperCase();
+
+  // Print the desired format
+  var formattedDate = dayOfMonth + firstLetterOfMonth;
+	
   // Replace 'your-game-result-url' with the actual URL you want to share
   var shareUrl = 'https://anegda.github.io/OTWordle/';
-  var tweetText = '¡He acertado el #OTWordle en ' + intentos.toString() + " intentos! #OT2023";
+  var tweetText = '¡He acertado el #OTWordle en ' + intentos.toString() + " intentos! #OT2023 #OTDirecto"+formattedDate;
 
   // Open Twitter share window
   window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(shareUrl) + '&text=' + encodeURIComponent(tweetText), '_blank');
